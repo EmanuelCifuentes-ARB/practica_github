@@ -78,3 +78,19 @@ Listando con _merged_ y _no-merged_ retorna:
     _v0.2_
 Entonces, la rama _v0.2_ todavía no está mergeada.
 
+Luego, los conflitctos se solucionaron manualmente (se dejo, hola, adios en 1.txt).
+Por ultimo, los cambios fueron commiteados.
+
+## Borrado de la rama _v0.2_
+Se intentó borrar la rama utilizando el comando:
+ $ git branch -d v0.2
+Lo cual retorna el siguiente mensaje:
+
+<em> warning: not deleting branch 'v0.2' that is not yet merged to
+          'refs/remotes/origin/v0.2', even though it is merged to HEAD.
+ error: The branch 'v0.2' is not fully merged.
+ If you are sure you want to delete it, run 'git branch -D v0.2'.</em>
+
+Sin embargo, el archivo 2.txt se observaba en *main*, por lo que se procedio con:
+ $ git branch -D v0.2
+La rama se borró exitosamente.
